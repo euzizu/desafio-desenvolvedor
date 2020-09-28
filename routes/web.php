@@ -16,6 +16,11 @@ Route::get('/', function () {
 });
 
 
-Route::get('/cliente', 'ClienteController@index')->name('view.cliente.create');
+Route::get('/cliente', 'ClienteController@index')->name('view.cliente.index');
 Route::get('/clientes', 'ClienteController@show')->name('view.cliente.show');
 Route::get('/cliente/{id}', 'ClienteController@edit')->name('view.cliente.edit');
+
+
+Route::get('/produto', 'ProdutoController@index')->name('view.produto.index');
+Route::get('/produtos', 'ProdutoController@show')->name('view.produto.show');
+Route::get('/produto/{id}', 'ProdutoController@edit')->name('view.produto.edit');
