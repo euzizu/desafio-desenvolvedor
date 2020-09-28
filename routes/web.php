@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/cliente', 'ClienteController@index')->name('view.cliente.create');
+Route::get('/clientes', 'ClienteController@show')->name('view.cliente.show');
+Route::get('/cliente/{id}', 'ClienteController@edit')->name('view.cliente.edit');
