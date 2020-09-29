@@ -21,6 +21,7 @@ Route::post('/cliente/create', 'ClienteController@create');
 Route::put('/cliente/{id}', 'ClienteController@update');
 Route::delete('/cliente/{id}', 'ClienteController@delete');
 
+Route::get('/produtos', 'ProdutoController@show');
 Route::post('/produto/create', 'ProdutoController@create');
 Route::put('/produto/{id}', 'ProdutoController@update');
 Route::delete('/produto/{id}', 'ProdutoController@delete');

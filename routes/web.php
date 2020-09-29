@@ -11,16 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'LojaController@index')->name('view.loja.index');
 
-
-Route::get('/cliente', 'ClienteController@index')->name('view.cliente.index');
+Route::get('/login', 'ClienteController@login')->name('view.cliente.formLogin');
+Route::get('/cliente', 'ClienteController@formCadastrar')->name('view.cliente.formCadastrar');
 Route::get('/clientes', 'ClienteController@show')->name('view.cliente.show');
 Route::get('/cliente/{id}', 'ClienteController@edit')->name('view.cliente.edit');
 
 
-Route::get('/produto', 'ProdutoController@index')->name('view.produto.index');
+Route::get('/produto', 'ProdutoController@formCadastrar')->name('view.produto.formCadastrar');
 Route::get('/produtos', 'ProdutoController@show')->name('view.produto.show');
 Route::get('/produto/{id}', 'ProdutoController@edit')->name('view.produto.edit');

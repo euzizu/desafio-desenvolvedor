@@ -1,31 +1,37 @@
 @extends('layouts.app')
 
 @section('content')
-
-<form id="cadastro-cliente" onsubmit="return false">
-    <div class="form-group">
-        <label for="txtNome">Nome:</label>
-        <input type="text" class="form-control" name="nome" id="txtNome" required>
+@include('site.cliente.componente.subnav')
+<div class="row">
+    <div class="col-md-8 order-md-1 offset-md-2">
+        <form id="cadastro-cliente" onsubmit="return false">
+            <div class="mb-3">
+                <label for="txtNome">Nome</label>
+                <input type="text" class="form-control" name="nome" id="txtNome" required>
+            </div>
+            <div class="mb-3">
+                <label for="txtCPF">CPF</label>
+                <input type="text" class="form-control" name="cpf" id="txtCPF" required>
+            </div>
+            <div class="mb-3">
+                <label for="txtEmail">E-mail</label>
+                <input type="text" class="form-control" name="email" id="txtEmail" required>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="pwdSenha">Senha</label>
+                    <input type="password" class="form-control" name="senha" id="pwdSenha" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="pwdConfirma">Confirmar Senha</label>
+                    <input type="password" class="form-control" id="pwdConfirmma" required>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
     </div>
-    <div class="form-group">
-        <label for="txtCPF">CPF:</label>
-        <input type="text" class="form-control" name="cpf" id="txtCPF" required>
-    </div>
-    <div class="form-group">
-        <label for="txtEmail">E-mail:</label>
-        <input type="text" class="form-control" name="email" id="txtEmail" required>
-    </div>
-    <div class="form-group">
-        <label for="pwdSenha">Senha:</label>
-        <input type="password" class="form-control" name="senha" id="pwdSenha" required>
-    </div>
-    <div class="form-group">
-        <label for="pwdConfirma">Confirmar Senha:</label>
-        <input type="password" class="form-control" id="pwdConfirmma" required>
-    </div>
-    
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
-</form>
+</div>
 @endsection
 
 @section('scripts')
@@ -50,7 +56,8 @@
             })    
             .done(function(msg){
                 alert('Cadastro realziado com sucesso')
-                console.log(msg)
+                window.location.href = "/clientes";
+                
             })
             .fail(function(e){
                 alert(e.responseText)

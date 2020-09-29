@@ -10,6 +10,11 @@ class ProdutoController extends Controller
 {
     public function index(Request $request)
     {
+        return view ('site.produto.default');
+    }
+
+    public function formCadastrar(Request $request)
+    {
         return view ('site.produto.create');
     }
 

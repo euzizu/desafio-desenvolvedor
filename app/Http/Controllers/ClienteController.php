@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class ClienteController extends Controller
 {
-    public function index(Request $request)
+    public function formCadastrar(Request $request)
     {
         return view ('site.cliente.create');
     }
@@ -23,6 +23,11 @@ class ClienteController extends Controller
     {
         $cliente = DB::table('cliente')->where('id', $id)->get();
         return view('site.cliente.edit', compact('cliente'));
+    }
+
+    public function login(Request $request)
+    {
+        return view('site.cliente.login');
     }
 // API
     public function create(Request $request, Cliente $cliente)
